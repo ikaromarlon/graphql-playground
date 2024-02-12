@@ -82,6 +82,28 @@ const resolvers = {
     deleteAuthor (_, args) {
       db.authors = db.authors.filter(author => author.id !== args.id)
       return true
+    },
+
+    addReview (_, args) {
+      const review = {
+        ...args.data,
+        id: Math.floor(Math.random() * 1000).toString()
+      }
+      db.reviews.push(review)
+      return review
+    },
+    updateReview (_, args) {
+      db.reviews = db.reviews.map(review => {
+        if (review.id === args.id) {
+          return { ...review, ...args.data }
+        }
+        return review
+      })
+      return db.reviews.find(review => review.id === args.id)
+    },
+    deleteReview (_, args) {
+      db.reviews = db.reviews.filter(review => review.id !== args.id)
+      return true
     }
   }
 }
