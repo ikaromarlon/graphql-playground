@@ -1,5 +1,6 @@
 import { ApolloServer } from '@apollo/server'
 import { startStandaloneServer } from '@apollo/server/standalone'
+import { typeDefs } from './schema.js'
 
 const state = {
   instance: null,
@@ -10,8 +11,8 @@ const state = {
 export function getServer () {
   if (state.instance === null) {
     state.instance = new ApolloServer({
-      // typeDefs,
-      // resolvers,
+      typeDefs
+      // resolvers
     })
   }
 
