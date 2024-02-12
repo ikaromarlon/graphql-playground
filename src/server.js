@@ -1,8 +1,8 @@
 import { ApolloServer } from '@apollo/server'
 import { startStandaloneServer } from '@apollo/server/standalone'
 import config from './config.js'
-import { typeDefs } from './schema.js'
-import resolvers from './resolvers.js'
+import { typeDefs } from './schemas/index.js'
+import { resolvers } from './resolvers/index.js'
 
 const state = {
   instance: null,
