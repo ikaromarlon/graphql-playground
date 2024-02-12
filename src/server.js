@@ -1,5 +1,6 @@
 import { ApolloServer } from '@apollo/server'
 import { startStandaloneServer } from '@apollo/server/standalone'
+import config from './config.js'
 import { typeDefs } from './schema.js'
 import resolvers from './resolvers.js'
 
@@ -19,7 +20,7 @@ export function getServer () {
 
   const start = async () => {
     const { url } = await startStandaloneServer(state.instance, {
-      listen: { port: 3000 }
+      listen: { port: config.app.port }
     })
     state.address = url
     state.isConnected = true
