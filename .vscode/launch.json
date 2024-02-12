@@ -14,7 +14,7 @@
       "console": "integratedTerminal"
     },
     {
-      "name": "Debug App (Nodemon)",
+      "name": "Dev",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
