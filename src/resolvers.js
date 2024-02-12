@@ -42,7 +42,7 @@ const resolvers = {
   Mutation: {
     addGame (_, args) {
       const game = {
-        ...args.game,
+        ...args.data,
         id: Math.floor(Math.random() * 1000).toString()
       }
       db.games.push(game)
@@ -51,7 +51,7 @@ const resolvers = {
     updateGame (_, args) {
       db.games = db.games.map(game => {
         if (game.id === args.id) {
-          return { ...game, ...args.edits }
+          return { ...game, ...args.data }
         }
         return game
       })
@@ -59,6 +59,28 @@ const resolvers = {
     },
     deleteGame (_, args) {
       db.games = db.games.filter(game => game.id !== args.id)
+      return true
+    },
+
+    addAuthor (_, args) {
+      const author = {
+        ...args.data,
+        id: Math.floor(Math.random() * 1000).toString()
+      }
+      db.authors.push(author)
+      return author
+    },
+    updateAuthor (_, args) {
+      db.authors = db.authors.map(author => {
+        if (author.id === args.id) {
+          return { ...author, ...args.data }
+        }
+        return author
+      })
+      return db.authors.find(author => author.id === args.id)
+    },
+    deleteAuthor (_, args) {
+      db.authors = db.authors.filter(author => author.id !== args.id)
       return true
     }
   }
