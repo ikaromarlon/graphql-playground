@@ -1,0 +1,10 @@
+{
+  "name": "graphql-playground",
+  "version": "0.0.1",
+  "description": "Just a playground to learn and practice with Graphql",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js"
+  }
+}
