@@ -6,9 +6,11 @@
   "type": "module",
   "scripts": {
     "start": "node src/main.js",
+    "dev": "nodemon",
     "lint": "standard --fix"
   },
   "devDependencies": {
+    "nodemon": "^3.0.3",
     "standard": "^17.1.0"
   },
   "standard": {
