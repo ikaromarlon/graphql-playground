@@ -13,9 +13,27 @@ Just a playground to learn and practice with Graphql
 APP_PORT=4000 # default 3000
 ```
 
+### Install
+```bash
+npm i 
+```
+
 ### Run Application
 ```bash
 npm start 
 ```
 
 ![App running](docs/assets/running.png)
+
+### TODO
+- [ ] Organize schema per entity
+- [ ] Implement a real database
+- [ ] Auth
+- [ ] Graphql + Fastify
+- [ ] Logs
+- [ ] Tests
+  - [ ] Integration
+  - [ ] Load
+  - [ ] Stress
+- [ ] Caching
+- [ ] Client (app)
